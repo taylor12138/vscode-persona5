@@ -56,7 +56,7 @@ export default class Loader {
     }
 
     protected getDefaultYcyImagePath() {
-        return path.join(this.context.extensionPath, 'images/ycy');
+        return path.join(this.context.extensionPath, 'images/persona');
     }
 
 

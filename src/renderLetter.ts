@@ -17,7 +17,7 @@ export default class Renderer {
             this.panel.webview.html = this.generateHtml(imagePath, title);
             this.panel.reveal();
         } else {
-            this.panel = vscode.window.createWebviewPanel("ycy", "Persona 5 Royal", vscode.ViewColumn.Two, {
+            this.panel = vscode.window.createWebviewPanel("persona", "Persona 5 Royal", vscode.ViewColumn.Two, {
                 enableScripts: true,
                 retainContextWhenHidden: true,
             });
