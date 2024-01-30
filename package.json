@@ -1,0 +1,78 @@
+{
+  "name": "vscode-persona5",
+  "displayName": "vscode-persona5",
+  "description": "女神异闻录5插件",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:vscode-persona5.start",
+    "*"
+],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-persona5.start",
+        "title": "persona"
+      }
+    ],
+    "configuration": {
+        "type": "object",
+        "title": "摩尔加纳提醒你",
+        "properties": {
+            "persona.minutes": {
+                "type": "number",
+                "default": 60,
+                "description": "展示提醒页面的时间间隔（分钟）"
+            },
+            "persona.tip": {
+                "type": "string",
+                "default": "有一双健康的眼睛，才能保护世界！站起来走动下吧～",
+                "description": "页面内展示文字"
+            },
+            "persona.type": {
+                "type": "string",
+                "default": "default",
+                "description": "类型：default:默认图；url：网络图"
+            },
+            "persona.customImages": {
+                "type": "array",
+                "default": [
+                    "http://b-ssl.duitang.com/uploads/item/201806/04/20180604090459_gqqjo.jpg"
+                ],
+                "description": "用户设置图片地址"
+            }
+        }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
+  }
+}
