@@ -13,7 +13,7 @@
   "activationEvents": [
     "onCommand:vscode-persona5.start",
     "*"
-],
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
@@ -33,7 +33,7 @@
             },
             "persona.tip": {
                 "type": "string",
-                "default": "有一双健康的眼睛，才能保护世界！站起来走动下吧～",
+                "default": "摩尔加纳提醒你：你已击杀部分需求，退出来活动下身体吧～",
                 "description": "页面内展示文字"
             },
             "persona.type": {

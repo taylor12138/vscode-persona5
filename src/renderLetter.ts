@@ -14,16 +14,16 @@ export default class Renderer {
         const title = config.get<string>('tip', '');
 
         if (this.panel) {
-            this.panel.webview.html = this.generateHtml(imagePath, title);
+            const src = this.panel.webview.asWebviewUri(imagePath);
+            this.panel.webview.html = this.generateHtml(src, title);
             this.panel.reveal();
         } else {
             this.panel = vscode.window.createWebviewPanel("persona", "Persona 5 Royal", vscode.ViewColumn.Two, {
                 enableScripts: true,
                 retainContextWhenHidden: true,
             });
-            
-            this.panel.webview.html = this.generateHtml(imagePath, title);
-
+            const src = this.panel.webview.asWebviewUri(imagePath);
+            this.panel.webview.html = this.generateHtml(src, title);
             // 关闭后释放资源
             this.panel.onDidDispose(() => {
                 this.panel = undefined;
@@ -41,9 +41,7 @@ export default class Renderer {
         </head>
         <body>
             <div><h1>${title}</h1></div>
-            <div><h1>${imagePath}</h1></div>
             <div><img src="${imagePath}"></div>
-            <div><img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"></div>
         </body>
         </html>`;
 
