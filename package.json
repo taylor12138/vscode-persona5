@@ -6,6 +6,7 @@
   "engines": {
     "vscode": "^1.85.0"
   },
+  "icon": "logo.jpg",
   "publisher": "taylor12138",
   "categories": [
     "Other"
@@ -14,6 +15,10 @@
     "onCommand:vscode-persona5.start",
     "*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taylor12138/vscode-persona5.git"
+  },
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
@@ -43,9 +48,7 @@
             },
             "persona.customImages": {
                 "type": "array",
-                "default": [
-                    "http://b-ssl.duitang.com/uploads/item/201806/04/20180604090459_gqqjo.jpg"
-                ],
+                "default": [],
                 "description": "用户设置图片地址"
             }
         }
