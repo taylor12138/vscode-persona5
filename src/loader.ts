@@ -30,6 +30,10 @@ export default class Loader {
         return image;
     }
 
+    public getLetterUri(): vscode.Uri {
+        return vscode.Uri.joinPath(this.context.extensionUri, 'images', 'letter.png');
+    }
+
     protected getRandomOne(images:  vscode.Uri[]): vscode.Uri {
         const n = Math.floor(Math.random() * images.length + 1) - 1;
         return images[n];

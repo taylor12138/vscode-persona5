@@ -6,12 +6,13 @@ import { Utility } from './utils';
 export default class Renderer {
     private static panel: vscode.WebviewPanel | undefined;
 
-    public static show(context: vscode.ExtensionContext, ) {
+    public static show(context: vscode.ExtensionContext, flag = false) {
         const loader: Loader = new Loader(context);
         const config = Utility.getConfiguration();
 
-        const imagePath = loader.getImageUri();
-        const title = config.get<string>('tip', '');
+        // 如果flag = true，则拿到预告函
+        const imagePath = flag ? loader.getLetterUri() : loader.getImageUri();
+        const title = flag ? '你已收到预告信！！！' :  config.get<string>('tip', '');
 
         if (this.panel) {
             const src = this.panel.webview.asWebviewUri(imagePath);
