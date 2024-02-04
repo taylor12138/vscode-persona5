@@ -3,7 +3,7 @@ import { Utility } from './utils';
 import Render from './renderLetter';
 
 let timer:any = null;
-let flag = true;
+let flag = false;
 
 export function activate(context: vscode.ExtensionContext) {
     const config = Utility.getConfiguration();
