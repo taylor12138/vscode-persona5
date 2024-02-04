@@ -14,9 +14,9 @@ vscode 闹钟插件 p5党自取/:rose[Wow]
 
 除了每过一小时会自动弹出提醒页面，也可以按 `shift+commend+p`, 然后输入 `persona`来打开提醒页面
 
-![usage](images/usage.png)
-![usage1](images/usage1.png)
-![usage2](images/usage2.png)
+![usage](images/usage.jpg)
+![usage1](images/usage1.jpg)
+![usage2](images/usage2.jpg)
 
 ## 配置
 
