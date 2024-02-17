@@ -2,7 +2,7 @@
   "name": "vscode-persona5",
   "displayName": "vscode-persona5",
   "description": "女神异闻录5插件",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -44,7 +44,12 @@
             "persona.type": {
                 "type": "string",
                 "default": "default",
-                "description": "类型：default:默认图；url：网络图"
+                "description": "资源类型：default：默认图 / 视频；url：网络图 / 视频"
+            },
+            "persona.play": {
+                "type": "string",
+                "default": "mp4",
+                "description": "播放类型：img：图片；mp4：mp4"
             },
             "persona.customImages": {
                 "type": "array",

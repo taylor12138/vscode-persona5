@@ -34,6 +34,21 @@ export default class Loader {
         return vscode.Uri.joinPath(this.context.extensionUri, 'images', 'letter.png');
     }
 
+    // 用同样的方法获取mp4文件
+    public getMp4Uri(): vscode.Uri {
+        let files: vscode.Uri[] = [];
+        const dirPath = path.join(this.context.extensionPath, 'images/video');
+        // 读取文件目录列表 readdirSync
+        const result = fs.readdirSync(dirPath);
+        result.forEach((item, index) => {
+            if(/\.(mp4)/.test(item)) {
+                files.push(vscode.Uri.joinPath(this.context.extensionUri, 'images/video', item));
+            }
+        });
+        const mp4 = this.getRandomOne(files);
+        return mp4;
+    }
+
     protected getRandomOne(images:  vscode.Uri[]): vscode.Uri {
         const n = Math.floor(Math.random() * images.length + 1) - 1;
         return images[n];
@@ -79,6 +94,10 @@ export default class Loader {
 
     protected getConfigType(): string {
         return Utility.getConfiguration().get<string>('type', 'default');
+    }
+
+    protected getConfigPlayType(): string {
+        return Utility.getConfiguration().get<string>('play', 'default');
     }
 
     protected getCustomImages(): vscode.Uri[] {

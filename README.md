@@ -7,23 +7,24 @@
 vscode 闹钟插件 p5党自取/:rose[Wow]
 - 连续工作1小时将会收到彩蛋提醒你“起身走动” 
 - 如果在弹窗中拒绝，则会在1小时后收到怪盗预告信
+- 已击杀音动效支持
 后续优化list ：
 - UI优化
-- 击杀音动效支持
 欢迎issue 我
 
 除了每过一小时会自动弹出提醒页面，也可以按 `shift+commend+p`, 然后输入 `persona`来打开提醒页面
 
-![usage](images/usage.jpg)
-![usage1](images/usage1.jpg)
-![usage2](images/usage2.jpg)
+![usage](https://raw.githubusercontent.com/taylor12138/vscode-persona5/main/images/usage.jpg)
+![usage1](https://raw.githubusercontent.com/taylor12138/vscode-persona5/main/images/usage1.jpg)
+![usage2](https://raw.githubusercontent.com/taylor12138/vscode-persona5/main/images/usage2.jpg)
 
 ## 配置
 
 * `persona.minutes`: 展示提醒页面的时间间隔（分钟）。(默认值为**60**)
 * `persona.tip`: 提示文字。 (默认值为**小哥哥，小哥哥，代码写久了，该休息啦~**)
 * `persona.type`: default (默认图)；url (图片地址)。(默认值为**default**)
-* `persona.customImages`: 配置图片数组（需要搭配persona.type为url） (默认值为**空数组**)
+* `persona.play`: 播放类型：img：图片；mp4：mp4。(默认值为**mp4**)
+* `persona.customImages`: 配置图片数组（需要搭配persona.type为url，切播放类型为img） (默认值为**空数组**)
 
 ```
 如下例子，使用自定义图片：
