@@ -6,7 +6,7 @@ import { Utility } from './utils';
 export default class Renderer {
     private static panel: vscode.WebviewPanel | undefined;
 
-    public static show(context: vscode.ExtensionContext, flag = false) {
+    public static show(context: vscode.ExtensionContext, flag = false, onDidDisposeCb: () => void) {
         const loader: Loader = new Loader(context);
         const config = Utility.getConfiguration();
         const platType = config.get<string>('play', '');
@@ -39,6 +39,7 @@ export default class Renderer {
             // 关闭后释放资源
             this.panel.onDidDispose(() => {
                 this.panel = undefined;
+                onDidDisposeCb();
             });
         }
     }

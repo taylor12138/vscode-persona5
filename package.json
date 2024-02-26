@@ -2,7 +2,7 @@
   "name": "vscode-persona5",
   "displayName": "vscode-persona5",
   "description": "女神异闻录5插件",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "engines": {
     "vscode": "^1.85.0"
   },
